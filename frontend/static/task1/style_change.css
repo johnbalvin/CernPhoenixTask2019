@@ -1,0 +1,7 @@
+#webGl2{
+    display: none;
+}
+.sizeWrapper{
+    display: flex;
+    justify-content: space-between;
+}

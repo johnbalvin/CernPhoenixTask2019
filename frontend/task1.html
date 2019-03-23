@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+  <title>Task 1</title>
+  <link href="/static/task1/style.css" rel="stylesheet">
+  <link href="/static/task1/style_change.css" rel="stylesheet">
+  <script src="/static/three.js-dev/examples/js/WebGL.js" defer></script>
+  <script src="/static/three.js-dev/build/three.js" defer></script>
+  <script src="/static/three.js-dev/examples/js/loaders/LoaderSupport.js" defer></script>
+  <script src="/static/three.js-dev/examples/js/controls/OrbitControls.js" defer></script>
+  <script src="/static/three.js-dev/examples/js/loaders/OBJLoader2.js" defer></script>
+  <script src="/static/task1/handler.js" defer></script>
+  <script src="/static/task1/scripts_change.js" defer></script>
+</head>
+<body>
+  <section class="info">
+      <h1 class="text">Task 1</h1>
+      <a href="/Task2">Task 2</a>
+      <a href="/About">About</a>
+  </section>
+  <h4 class="text">Usage: use mouse wheel to explore or holding and moving with left click</h4>
+  <h4 class="text">I will use WebGL2, you can see the difference between WebGL1 and WebGL2</h4>
+  <div class="switched">
+      <label>Pick webGL version to watch the difference</label>
+      <select value="1">
+        <option value="1">WEBGL1</option>
+        <option value="2">WEBGL2</option>
+      </select>
+  </div>
+  <div class="sizeWrapper">
+    <label>Horizontal Size: <input class="horizontal" type="range" min="0" max="100" step="0.4"></label>
+    <label>Vertical Size: <input class="vertical" type="range" min="0" max="100" step="0.4"></label>
+  </div>
+  <p>
+      Currently browser does not support to attach listener to specific elements inside canvas,
+      may be there is some way but I haven´t found it yet
+      <a href="https://stackoverflow.com/questions/31014083/events-attached-to-object-inside-canvas">
+        https://stackoverflow.com/questions/31014083/events-attached-to-object-inside-canvas
+      </a>  <br>
+      This means I can't complete bonus in task 1 (for now).
+  </p>
+  <canvas id="webGl1"></canvas>
+  <canvas id="webGl2"></canvas>
+</body>
