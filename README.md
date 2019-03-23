@@ -38,4 +38,4 @@ If you want to host your image like gcr.io/johnbalvin/cern_phoenix_tasks2019, yo
 ### Steps  
   1. In the console go to *deploy* folder : `cd tasks/deploy`
   2. Run in console: `gcloud builds submit .`
-  3. Your should know have `gcr.io` reporsitory
+  3. Your should now have `gcr.io` repository
