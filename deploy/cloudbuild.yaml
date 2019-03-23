@@ -1,6 +1,6 @@
 steps:
-- name: 'gcr.io/cloud-builders/gcloud-slim'
-  args: ['source','repos','clone', 'task','src/me','--project=johnbalvin']
+- name: 'gcr.io/cloud-builders/git'
+  args: ['clone', 'https://github.com/johnbalvin/CernPhoenixTask2019','src/me']
 - name: 'gcr.io/cloud-builders/go'
   args: ['get','-d','me/backend']
 - name: 'gcr.io/cloud-builders/go'
