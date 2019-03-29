@@ -2,7 +2,7 @@ class Handler{
 	constructor(){
       this.render=this.render.bind(this);
       this.scene=new THREE.Scene();
-      this.camera = new THREE.PerspectiveCamera(45, 2, 0.1, 1000);
+      this.camera = new THREE.PerspectiveCamera(45, 2, 0.1, 10000);
       this.renderer="";
       this.controls="";
       this.obj="";
@@ -38,7 +38,37 @@ class Handler{
 
     let objLoader=new THREE.OBJLoader2().parse(this.obj);
     this.scene.add(objLoader);
+
+    let loader = new THREE.FontLoader();
+    
+    loader.load( "/static/three.js-dev/examples/fonts/gentilis_bold.typeface.json",  ( font ) =>{
+      this.addText("Hi :D",font);
+    } );
     requestAnimationFrame(this.render);
+  }
+  addText(text,font){
+    let textGeo = new THREE.TextGeometry( text, {
+      font: font,
+      size: 70,
+      height: 20,
+      curveSegments: 4,
+      bevelThickness: 2,
+      bevelSize: 1.5,
+      bevelEnabled: true
+    } );
+    textGeo.computeBoundingBox();
+    textGeo.computeVertexNormals();
+
+    let materials = [
+      new THREE.MeshPhongMaterial( { color: "#F48FB1"} ), // front
+      new THREE.MeshPhongMaterial( { color: "#F48FB1" } ) // side
+    ];
+    textGeo = new THREE.BufferGeometry().fromGeometry( textGeo );
+    let textMesh = new THREE.Mesh( textGeo, materials );
+    textMesh.position.y = 200;
+    textMesh.position.z = 0;
+    textMesh.rotation.y = Math.PI/2;
+    this.scene.add(textMesh);
   }
   render(){
     const canvas = this.renderer.domElement;
