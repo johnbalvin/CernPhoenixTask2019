@@ -32,10 +32,10 @@ If you want to host your image like gcr.io/johnbalvin/cern_phoenix_tasks2019, yo
    
 ### Requirements
   * You need the content inside folder `deploy`
-  * Create a proyect at [Google Console](https://console.cloud.google.com) console.cloud.google.com and enable billing
+  * Create a proyect at [Google Console](https://console.cloud.google.com) and enable billing
   * Intall [Google SDK](https://cloud.google.com/sdk/) and authenticate with your account
   * Change at `deploy/cloudbuild.yaml` this: `gcr.io/johnbalvin/cern_phoenix_tasks2019` for this format: `gcr.io/[projectID]/anyNameYouWant` for your reporsitory created
 ### Steps  
   1. In the console go to *deploy* folder : `cd tasks/deploy`
   2. Run in console: `gcloud builds submit .`
-  3. Your should know have `gcr.io` reporsitory
+  3. Your should now have `gcr.io` repository
